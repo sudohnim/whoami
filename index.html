@@ -122,24 +122,23 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      background: #F4FBF6;
-      border: 1px solid #D4EDD9;
+      background: #F5F5F5;
+      border: 1px solid #E0E0E0;
       border-radius: 14px;
       padding: 16px 28px;
       width: 280px;
       text-decoration: none;
-      color: #1A2E1F;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .app-card:hover {
-      box-shadow: 0 8px 24px rgba(74,158,111,0.12);
-      transform: translateY(-2px);
+      color: #888;
+      position: relative;
+      filter: grayscale(1);
+      opacity: 0.7;
+      cursor: default;
     }
     .app-icon {
       width: 44px;
       height: 44px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #FF4D00, #FF2200);
+      background: #ccc;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -151,12 +150,25 @@
       font-weight: 700;
       font-size: 15px;
       margin-bottom: 2px;
-      color: #1A2E1F;
+      color: #888;
     }
     .app-desc {
       font-size: 12px;
-      color: #6B9E75;
+      color: #aaa;
       font-weight: 400;
+    }
+    .coming-soon {
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      background: #4A9E6F;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
     }
 
     footer {
@@ -199,6 +211,7 @@
     <div class="apps">
       <div class="apps-label">Our Apps</div>
       <div class="app-card">
+        <span class="coming-soon">Coming Soon!</span>
         <div class="app-icon">🤼</div>
         <div class="app-info">
           <div class="app-name">Stance Check</div>

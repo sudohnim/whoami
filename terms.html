@@ -6,11 +6,23 @@
   <title>Terms of Service — Sudohnim</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #F4F1E8;
+      --ink: #232318;
+      --body: #44443A;
+      --muted: #6F6E5C;
+      --faint: #A29E86;
+      --olive: #5C6B2E;
+      --olive-deep: #414C1E;
+      --olive-tint: #E7E9D5;
+      --border: #E2DCC9;
+      --surface-2: #EEEADD;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Lato', sans-serif;
-      background-color: #ffffff;
-      color: #1A2E1F;
+      background-color: var(--bg);
+      color: var(--ink);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -19,20 +31,20 @@
       content: '';
       display: block;
       height: 6px;
-      background: linear-gradient(90deg, #4A9E6F, #7BC47F, #A8D5B5, #7BC47F, #4A9E6F);
+      background: linear-gradient(90deg, var(--olive-deep), var(--olive), #8A9656, var(--olive), var(--olive-deep));
     }
     header {
       padding: 24px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #E8F5ED;
+      border-bottom: 1px solid var(--border);
     }
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 700;
-      color: #1A2E1F;
+      color: var(--ink);
       text-decoration: none;
     }
     nav a {
@@ -40,12 +52,12 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #6B9E75;
+      color: var(--olive);
       text-decoration: none;
       margin-left: 28px;
       transition: color 0.2s;
     }
-    nav a:hover { color: #1A2E1F; }
+    nav a:hover { color: var(--ink); }
     main {
       flex: 1;
       max-width: 680px;
@@ -57,25 +69,25 @@
       display: inline-block;
       font-size: 13px;
       font-weight: 700;
-      color: #6B9E75;
+      color: var(--olive);
       text-decoration: none;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 40px;
       transition: color 0.2s;
     }
-    .back:hover { color: #1A2E1F; }
+    .back:hover { color: var(--ink); }
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 40px;
       font-weight: 700;
       letter-spacing: -0.01em;
       margin-bottom: 8px;
-      color: #1A2E1F;
+      color: var(--ink);
     }
     .meta {
       font-size: 13px;
-      color: #A8D5B5;
+      color: var(--faint);
       margin-bottom: 48px;
       font-weight: 400;
     }
@@ -84,40 +96,40 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #6B9E75;
+      color: var(--olive);
       margin: 40px 0 12px;
     }
     h3 {
       font-size: 15px;
       font-weight: 700;
-      color: #1A2E1F;
+      color: var(--ink);
       margin: 24px 0 8px;
     }
-    p { margin-bottom: 16px; font-size: 15px; color: #3D5C44; line-height: 1.75; font-weight: 300; }
+    p { margin-bottom: 16px; font-size: 15px; color: var(--body); line-height: 1.75; font-weight: 300; }
     ul { padding-left: 20px; margin-bottom: 16px; }
-    li { font-size: 15px; color: #3D5C44; margin-bottom: 8px; line-height: 1.6; font-weight: 300; }
-    strong { font-weight: 700; color: #1A2E1F; }
-    a { color: #4A9E6F; text-decoration: none; border-bottom: 1px solid #4A9E6F44; }
-    a:hover { border-color: #4A9E6F; }
-    hr { border: none; border-top: 1px solid #D4EDD9; margin: 48px 0; }
+    li { font-size: 15px; color: var(--body); margin-bottom: 8px; line-height: 1.6; font-weight: 300; }
+    strong { font-weight: 700; color: var(--ink); }
+    a { color: var(--olive); text-decoration: none; border-bottom: 1px solid #5C6B2E44; }
+    a:hover { border-color: var(--olive); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
     .app-block {
-      background: #F4FBF6;
-      border: 1px solid #D4EDD9;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px 24px;
       margin-bottom: 16px;
     }
     .app-block p { margin-bottom: 8px; }
     .app-block p:last-child { margin-bottom: 0; }
-    .footnote { font-size: 12px; color: #A8D5B5; }
+    .footnote { font-size: 12px; color: var(--faint); }
     footer {
       padding: 32px 40px;
       text-align: center;
-      border-top: 1px solid #E8F5ED;
+      border-top: 1px solid var(--border);
     }
-    footer p { font-size: 12px; color: #A8D5B5; margin-bottom: 10px; }
-    footer a { font-size: 12px; color: #6B9E75; text-decoration: none; margin: 0 12px; border: none; }
-    footer a:hover { color: #1A2E1F; }
+    footer p { font-size: 12px; color: var(--faint); margin-bottom: 10px; }
+    footer a { font-size: 12px; color: var(--olive); text-decoration: none; margin: 0 12px; border: none; }
+    footer a:hover { color: var(--ink); }
   </style>
 </head>
 <body>

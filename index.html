@@ -5,19 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sudohnim</title>
   <meta name="google-site-verification" content="E_Pe6UE-UhsYs4GHNRGGZE3-8_mEVrTm-F8NxBRQSS4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #F4F1E8;        /* warm cream page */
-      --surface: #FBFAF3;   /* card / raised surface */
-      --surface-2: #EEEADD; /* subtle section background */
-      --ink: #232318;       /* warm near-black text */
-      --muted: #6F6E5C;     /* muted warm text */
-      --faint: #A29E86;     /* faint labels */
-      --olive: #5C6B2E;     /* rich olive green accent */
-      --olive-deep: #414C1E;/* darker olive (hover) */
-      --olive-tint: #E7E9D5;/* pale olive tint */
-      --border: #E2DCC9;    /* warm border */
+      --bg: #F4F1E8;
+      --surface: #FBFAF3;
+      --surface-2: #EEEADD;
+      --ink: #232318;
+      --muted: #6F6E5C;
+      --faint: #7A7660;
+      --olive: #5C6B2E;
+      --olive-deep: #414C1E;
+      --olive-tint: #E7E9D5;
+      --border: #E2DCC9;
+      --sp-1: 4px;
+      --sp-2: 8px;
+      --sp-3: 12px;
+      --sp-4: 16px;
+      --sp-5: 20px;
+      --sp-6: 24px;
+      --sp-7: 28px;
+      --sp-8: 32px;
+      --sp-10: 40px;
+      --sp-12: 48px;
+      --sp-16: 64px;
+      --sp-24: 96px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,12 +48,12 @@
     body::before {
       content: '';
       display: block;
-      height: 6px;
+      height: 4px;
       background: linear-gradient(90deg, var(--olive-deep), var(--olive), #8A9656, var(--olive), var(--olive-deep));
     }
 
     header {
-      padding: 24px 40px;
+      padding: var(--sp-5) var(--sp-10);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -61,29 +75,35 @@
       text-transform: uppercase;
       color: var(--olive);
       text-decoration: none;
-      margin-left: 28px;
-      transition: color 0.2s;
+      margin-left: var(--sp-7);
+      padding: 10px 0;
+      transition: color 0.2s ease-out;
     }
     nav a:hover { color: var(--ink); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--olive);
+      outline-offset: 2px;
+    }
 
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 80px 24px;
+      padding: var(--sp-24) var(--sp-6) var(--sp-16);
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(56px, 12vw, 120px);
+      font-size: clamp(42px, 8vw, 72px);
       font-weight: 900;
       line-height: 1;
       color: var(--ink);
       letter-spacing: -0.02em;
-      margin-bottom: 28px;
+      margin-bottom: var(--sp-4);
+      text-wrap: balance;
     }
 
     h1 span {
@@ -91,27 +111,20 @@
     }
 
     .tagline {
-      font-size: clamp(16px, 2.5vw, 22px);
+      font-size: clamp(16px, 2.5vw, 20px);
       font-weight: 300;
       color: var(--muted);
       max-width: 480px;
       line-height: 1.6;
-      margin-bottom: 56px;
-    }
-
-    .divider {
-      width: 48px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--olive), #8A9656);
-      border-radius: 2px;
-      margin: 0 auto 56px;
+      margin-bottom: var(--sp-16);
+      text-wrap: pretty;
     }
 
     .apps {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: var(--sp-8);
       width: 100%;
     }
 
@@ -121,14 +134,13 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--faint);
-      margin-bottom: 4px;
+      margin: 0 0 var(--sp-1);
     }
 
     .card-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-5);
       width: 100%;
       max-width: 760px;
     }
@@ -136,37 +148,48 @@
     .app-card {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: var(--sp-3);
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      width: 340px;
+      border-radius: 14px;
+      padding: var(--sp-5);
       text-align: left;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
     }
+    .app-card:nth-child(1) { animation-delay: 0.1s; }
+    .app-card:nth-child(2) { animation-delay: 0.2s; }
+    .app-card:nth-child(3) { animation-delay: 0.3s; }
+    .app-card:nth-child(4) { animation-delay: 0.4s; }
     .app-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(65, 76, 30, 0.12);
       border-color: var(--olive-tint);
     }
 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .app-head {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: var(--sp-3);
     }
 
     .app-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 22px;
       flex-shrink: 0;
       overflow: hidden;
+      background: var(--surface-2);
     }
     .app-icon.stance {
       background: linear-gradient(145deg, var(--olive), var(--olive-deep));
@@ -177,15 +200,15 @@
     .app-info { flex: 1; min-width: 0; }
     .app-name {
       font-weight: 700;
-      font-size: 17px;
+      font-size: 15px;
       color: var(--ink);
-      margin-bottom: 3px;
+      margin-bottom: var(--sp-1);
     }
     .app-desc {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
       font-weight: 400;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .badge-pill {
@@ -194,9 +217,9 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 3px 9px;
+      padding: var(--sp-1) var(--sp-2);
       border-radius: 20px;
-      margin-top: 6px;
+      margin-top: var(--sp-2);
     }
     .badge-pill.live { background: var(--olive); color: #fff; }
     .badge-pill.oss {
@@ -206,108 +229,156 @@
     }
     .badge-pill.soon {
       background: var(--surface-2);
-      color: var(--muted);
+      color: var(--olive-deep);
       border: 1px solid var(--border);
     }
 
-    /* store badges */
-    .stores { display: flex; gap: 10px; flex-wrap: wrap; }
+    .stores { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
     .store-badge {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 6px;
       background: #20201A;
       color: #fff;
-      border-radius: 10px;
-      padding: 8px 14px;
+      border-radius: 8px;
+      padding: 5px var(--sp-3);
       text-decoration: none;
-      flex: 1;
-      min-width: 130px;
-      transition: background 0.2s;
+      transition: background 0.2s ease-out, transform 0.15s ease-out;
     }
-    .store-badge:hover { background: #000; }
+    .store-badge:hover { background: #000; transform: scale(1.02); }
     .store-badge svg { flex-shrink: 0; }
     .store-text { display: flex; flex-direction: column; line-height: 1.15; }
     .store-text .small { font-size: 9px; letter-spacing: 0.02em; opacity: 0.85; }
-    .store-text .big { font-size: 15px; font-weight: 700; letter-spacing: 0.01em; }
+    .store-text .big { font-size: 13px; font-weight: 700; letter-spacing: 0.01em; }
 
-    /* github link */
     .gh-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: var(--sp-1);
       align-self: flex-start;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.03em;
       color: var(--olive);
       text-decoration: none;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 9px 16px;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      border-radius: 8px;
+      padding: 5px var(--sp-3);
+      transition: color 0.2s ease-out, border-color 0.2s ease-out, background 0.2s ease-out, transform 0.15s ease-out;
     }
-    .gh-link:hover { color: var(--olive-deep); border-color: var(--olive); background: var(--olive-tint); }
+    .gh-link:hover { color: var(--olive-deep); border-color: var(--olive); background: var(--olive-tint); transform: scale(1.02); }
 
-    /* play-in-browser link */
     .play-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: var(--sp-1);
       align-self: flex-start;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.03em;
       color: #fff;
       text-decoration: none;
       background: var(--olive);
       border: 1px solid var(--olive-deep);
-      border-radius: 10px;
-      padding: 9px 16px;
-      transition: background 0.2s;
+      border-radius: 8px;
+      padding: 5px var(--sp-3);
+      transition: background 0.2s ease-out, transform 0.15s ease-out;
     }
-    .play-link:hover { background: var(--olive-deep); }
+    .play-link:hover { background: var(--olive-deep); transform: scale(1.02); }
 
     footer {
-      padding: 32px 40px;
-      text-align: center;
+      padding: var(--sp-10) var(--sp-10) var(--sp-8);
       border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-3);
     }
 
     footer p {
       font-size: 14px;
       color: var(--faint);
-      margin-bottom: 10px;
     }
 
     footer a {
       font-size: 14px;
       color: var(--olive);
       text-decoration: none;
-      margin: 0 12px;
-      transition: color 0.2s;
+      padding: 10px 0;
+      transition: color 0.2s ease-out;
     }
     footer a:hover { color: var(--ink); }
+
+    .footer-links {
+      display: flex;
+      gap: var(--sp-6);
+      margin-top: var(--sp-1);
+    }
+
+    .footer-copy {
+      margin-top: var(--sp-2);
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: var(--sp-4) var(--sp-5); }
+      main { padding: var(--sp-16) var(--sp-5) var(--sp-12); }
+      .card-grid { grid-template-columns: 1fr; }
+      footer { padding: var(--sp-8) var(--sp-5) var(--sp-6); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1A1D15;
+        --surface: #222819;
+        --surface-2: #2A3120;
+        --ink: #E9E4D3;
+        --muted: #B0AB95;
+        --faint: #908D7E;
+        --olive: #A6B85C;
+        --olive-deep: #8FA54E;
+        --olive-tint: #333A26;
+        --border: #343B28;
+      }
+      .store-badge { background: #E9E4D3; color: #1A1D15; }
+      .store-badge:hover { background: #fff; }
+      .store-badge .small { color: #1A1D15; opacity: 0.7; }
+      .play-link { border-color: var(--olive-deep); }
+      body::before { background: linear-gradient(90deg, var(--olive-deep), var(--olive), #C4D68A, var(--olive), var(--olive-deep)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .app-card { animation: none; opacity: 1; transition: none; }
+      .app-card:hover { transform: none; }
+      .store-badge, .gh-link, .play-link, nav a, footer a { transition: none; }
+      .store-badge:hover, .gh-link:hover, .play-link:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Sudohnim</div>
+    <nav aria-label="Main">
+      <div class="logo">Sudohnim</div>
+    </nav>
   </header>
 
   <main>
     <h1>Hello <span>World!</span></h1>
-    <p class="tagline">This is Sudohnim and we do things.</p>
-    <div class="divider"></div>
+    <p class="tagline">We build tools that work the way you think.</p>
 
     <div class="apps">
-      <div class="apps-label">What We Build</div>
+      <h2 class="apps-label">What We Build</h2>
       <div class="card-grid">
 
         <!-- Stance Lab -->
         <div class="app-card">
           <div class="app-head">
-            <div class="app-icon"><img src="assets/stance-lab-icon-512.png" alt="Stance Lab icon" /></div>
+            <div class="app-icon"><img src="assets/stance-lab-icon-512.png" alt="Stance Lab icon" width="44" height="44" fetchpriority="high" /></div>
             <div class="app-info">
               <div class="app-name">Stance Lab</div>
               <div class="app-desc">Drill trainer for wrestlers</div>
@@ -316,11 +387,11 @@
           </div>
           <div class="stores">
             <a class="store-badge" href="https://apps.apple.com/us/app/stance-lab-training/id6778647656" target="_blank" rel="noopener" aria-label="Download Stance Lab on the App Store">
-              <svg width="20" height="20" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
               <span class="store-text"><span class="small">Download on the</span><span class="big">App Store</span></span>
             </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sudohnim.stancecheck&hl=en_US" target="_blank" rel="noopener" aria-label="Get Stance Lab on Google Play">
-              <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#00E0FF" d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.2z"/>
                 <path fill="#FFCE00" d="m16 15.3-3-3v-.2l3-3 .1.1 3.7 2.1c1 .6 1 1.6 0 2.2L16.1 15.2z"/>
                 <path fill="#FF3A44" d="M16.1 15.2 13 12 3.6 21.7c.4.4.9.4 1.6.1l10.9-6.6z"/>
@@ -329,21 +400,21 @@
               <span class="store-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
             </a>
           </div>
-          <a class="play-link" href="/stancelab/">▶&nbsp; Play free in your browser</a>
+          <a class="play-link" href="/stancelab/">Play in browser</a>
         </div>
 
         <!-- Eidolon -->
         <div class="app-card">
           <div class="app-head">
-            <div class="app-icon"><img src="assets/eidolon-logo.png" alt="Eidolon logo" /></div>
+            <div class="app-icon"><img src="assets/eidolon-logo.png" alt="Eidolon logo" width="44" height="44" loading="lazy" /></div>
             <div class="app-info">
               <div class="app-name">Eidolon</div>
-              <div class="app-desc">OSINT scanner for your digital footprint — runs locally, your data never leaves your box.</div>
+              <div class="app-desc">OSINT scanner for your digital footprint. Runs locally, data stays on your machine.</div>
               <span class="badge-pill oss">Open Source</span>
             </div>
           </div>
           <a class="gh-link" href="https://github.com/sudohnim/eidolon" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.19.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.19.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
             View on GitHub
           </a>
         </div>
@@ -351,15 +422,15 @@
         <!-- lou-op -->
         <div class="app-card">
           <div class="app-head">
-            <div class="app-icon"><img src="assets/lou-op-logo.png" alt="lou-op logo" /></div>
+            <div class="app-icon"><img src="assets/lou-op-logo.png" alt="lou-op logo" width="44" height="44" loading="lazy" /></div>
             <div class="app-info">
               <div class="app-name">lou-op</div>
-              <div class="app-desc">Asynchronous Ralph loops on multiple backend with gated tests. Open-source, WIP.</div>
+              <div class="app-desc">Async Ralph loops across multiple backends with gated tests.</div>
               <span class="badge-pill oss">Open Source</span>
             </div>
           </div>
           <a class="gh-link" href="https://github.com/sudohnim/lou-op" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.19.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.19.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
             View on GitHub
           </a>
         </div>
@@ -367,7 +438,7 @@
         <!-- dequeue -->
         <div class="app-card">
           <div class="app-head">
-            <div class="app-icon"><img src="assets/dequeue-logo.png" alt="dequeue logo" /></div>
+            <div class="app-icon"><img src="assets/dequeue-logo.png" alt="dequeue logo" width="44" height="44" loading="lazy" /></div>
             <div class="app-info">
               <div class="app-name">dequeue</div>
               <div class="app-desc">The TODO app for DOers.</div>
@@ -381,11 +452,13 @@
   </main>
 
   <footer>
-    <p>Need to get in touch? <a href="mailto:hello@sudohnim.com">Email us here</a></p>
-    <p>© 2026 Sudohnim. All rights reserved.</p>
-    <div>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+    <div class="footer-inner">
+      <p>Need to get in touch? <a href="mailto:hello@sudohnim.com">Email us here</a></p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Sudohnim. All rights reserved.</p>
     </div>
   </footer>
 </body>

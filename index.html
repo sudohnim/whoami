@@ -232,6 +232,11 @@
       color: var(--olive-deep);
       border: 1px solid var(--border);
     }
+    .badge-pill.progress {
+      background: #F4EAD0;
+      color: #8A6D1F;
+      border: 1px solid #E4D3A4;
+    }
 
     .stores { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
     .store-badge {
@@ -369,7 +374,7 @@
 
   <main>
     <h1>Hello <span>World!</span></h1>
-    <p class="tagline">We build tools that work the way you think.</p>
+    <p class="tagline">We build tools for those who think differently.</p>
 
     <div class="apps">
       <h2 class="apps-label">What We Build</h2>
@@ -442,7 +447,30 @@
             <div class="app-info">
               <div class="app-name">dequeue</div>
               <div class="app-desc">The TODO app for DOers.</div>
-              <span class="badge-pill soon">Coming Soon</span>
+              <span class="badge-pill live">Now Available</span>
+            </div>
+          </div>
+          <div class="stores">
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sudohnim.dequeue&hl=en_US" target="_blank" rel="noopener" aria-label="Get dequeue on Google Play">
+              <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#00E0FF" d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.2z"/>
+                <path fill="#FFCE00" d="m16 15.3-3-3v-.2l3-3 .1.1 3.7 2.1c1 .6 1 1.6 0 2.2L16.1 15.2z"/>
+                <path fill="#FF3A44" d="M16.1 15.2 13 12 3.6 21.7c.4.4.9.4 1.6.1l10.9-6.6z"/>
+                <path fill="#00D856" d="M16.1 8.8 5.2 2.2c-.7-.4-1.2-.3-1.6.1L13 12z"/>
+              </svg>
+              <span class="store-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- enqueue -->
+        <div class="app-card">
+          <div class="app-head">
+            <div class="app-icon"><img src="assets/enqueue-logo.png" alt="enqueue logo" width="44" height="44" loading="lazy" /></div>
+            <div class="app-info">
+              <div class="app-name">enqueue</div>
+              <div class="app-desc">Your (slightly weird) second brain companion.</div>
+              <span class="badge-pill progress">In Progress</span>
             </div>
           </div>
         </div>

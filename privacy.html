@@ -139,7 +139,7 @@
     <a class="back" href="index.html">← Back</a>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: July 13, 2026 · Sudohnim</p>
+    <p class="meta">Last updated: October 19, 2026 · Sudohnim</p>
 
     <p>Sudohnim ("we", "our", or "us") builds mobile apps. This Privacy Policy explains how we handle information across all of our products. We believe in collecting as little data as possible — only what's strictly necessary to deliver the app experience.</p>
 
@@ -151,10 +151,13 @@
     <div class="app-block">
       <strong>dequeue</strong> — a task-management ("to-do") app with cross-device sync (coming soon)
     </div>
+    <div class="app-block">
+      <strong>enqueue</strong> - a private second brain for notes, links and files, on Mac and Android, with optional end-to-end encrypted sync (coming soon)
+    </div>
     <p>As we publish additional apps, they will be listed here and covered by this policy.</p>
 
     <h2>2. What We Collect</h2>
-    <p>How much we collect depends on the app. <strong>Stance Lab</strong> requires no account and collects no information that identifies you personally. <strong>dequeue</strong> requires you to sign in and syncs your data across devices, so it necessarily collects more — detailed below.</p>
+    <p>How much we collect depends on the app. <strong>Stance Lab</strong> requires no account and collects no information that identifies you personally. <strong>dequeue</strong> requires you to sign in and syncs your data across devices, so it necessarily collects more — detailed below. <strong>enqueue</strong> works without an account; signing in is only for its hosted sync, and what it syncs is encrypted so that we cannot read it.</p>
     <p><strong>Across all apps:</strong></p>
     <ul>
       <li><strong>Anonymous user ID</strong> — a randomly generated identifier used to track purchase status via RevenueCat.</li>
@@ -167,11 +170,19 @@
       <li><strong>Your content</strong> — the tasks, lists, and settings you create in dequeue are stored on our servers so they sync across your devices.</li>
     </ul>
 
+    <p><strong>enqueue only (if you use its hosted sync):</strong></p>
+    <ul>
+      <li><strong>Account identity</strong> - you sign in with Google or Apple. We receive and store your <strong>email address</strong> (with Apple, possibly a private relay address you choose) and your <strong>Google or Apple account identifier</strong>. We never receive your password.</li>
+      <li><strong>Devices</strong> - a name you give each linked device (for example "Mac") and when it was added, so you can see and remove your devices.</li>
+      <li><strong>Encrypted library</strong> - your notes, files and settings are encrypted on your device before they are uploaded, with a key that only your devices hold. We store this ciphertext, and can see only its size, how many items there are and when they change. We cannot read, search or recover its contents.</li>
+    </ul>
+
     <h2>3. How We Use It</h2>
     <ul>
       <li>To verify and restore purchases across devices.</li>
       <li>To unlock features tied to your purchase entitlement.</li>
       <li><strong>(dequeue)</strong> To authenticate your account and sync your tasks across your devices.</li>
+      <li><strong>(enqueue)</strong> To authenticate your account, keep your devices linked, and pass your encrypted library between them.</li>
     </ul>
     <p>We do not use any data for advertising, analytics, profiling, or any purpose beyond delivering core app functionality. We do not sell your data.</p>
 
@@ -189,19 +200,29 @@
       <li><strong>Cloud sync</strong> — your tasks and lists are stored on our servers and transmitted over encrypted (HTTPS) connections so they stay in sync across your devices.</li>
     </ul>
 
+    <h3>enqueue</h3>
+    <ul>
+      <li><strong>Local first</strong> - your library lives on your own devices. Without hosted sync, nothing you save in enqueue reaches our servers.</li>
+      <li><strong>End-to-end encryption</strong> - the key that opens your library never leaves your devices and is never sent to us. Signing in proves who you are; it does not give us, or anyone holding your account, the ability to read your library.</li>
+      <li><strong>AI features</strong> - if you turn on an AI assistant, your device sends the text it needs directly to the AI provider you choose (for example a model running on your own Mac, or OpenRouter), under that provider's terms. That text does not pass through our servers.</li>
+      <li><strong>Link previews</strong> - when you ask for a preview of a saved link, your device fetches that page itself.</li>
+    </ul>
+
     <h2>5. Third-Party Services</h2>
     <p><strong>RevenueCat</strong> — we use RevenueCat to manage in-app purchases and entitlement status across all our apps. RevenueCat receives your anonymous user ID and purchase data. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</p>
-    <p><strong>Google Sign-In</strong> (dequeue) — used to authenticate your account. Governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+    <p><strong>Google Sign-In</strong> (dequeue, enqueue) — used to authenticate your account. Governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+    <p><strong>Sign in with Apple</strong> (enqueue) - used to authenticate your account. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
+    <p><strong>Railway</strong> (enqueue) - hosts enqueue's sync service and its database. It stores your account record and your encrypted library, which it cannot read either.</p>
     <p><strong>Apple App Store / Google Play</strong> — purchases are processed by Apple or Google. Their privacy policies govern how payment and transaction data are handled.</p>
 
     <h2>6. Data Retention</h2>
-    <p><strong>Stance Lab:</strong> your anonymous user ID is stored on your device and persists until you delete the app; we maintain no independent user database. <strong>dequeue:</strong> your account identity and task data are retained until you delete your account, after which they are removed from our active systems. RevenueCat, Apple, and Google retain purchase records per their own data retention policies.</p>
+    <p><strong>Stance Lab:</strong> your anonymous user ID is stored on your device and persists until you delete the app; we maintain no independent user database. <strong>dequeue:</strong> your account identity and task data are retained until you delete your account, after which they are removed from our active systems. <strong>enqueue:</strong> your account, device records and encrypted library are kept until you delete your account; deleting it ends every session and device at once and removes the library from our active systems. The copy on your own devices stays yours. RevenueCat, Apple, and Google retain purchase records per their own data retention policies.</p>
 
     <h2>7. Children's Privacy</h2>
     <p>Our apps are not directed at children under 13. We do not knowingly collect any personal information from children.</p>
 
     <h2>8. Your Rights</h2>
-    <p><strong>Stance Lab:</strong> we hold no identity-linked data — to reset your anonymous user ID, delete and reinstall the app. <strong>dequeue:</strong> you may access, export, or delete your account and all associated task data from the app's settings, or by emailing <a href="mailto:hello@sudohnim.com">hello@sudohnim.com</a>. For data held by RevenueCat, Apple, or Google, contact those services directly.</p>
+    <p><strong>Stance Lab:</strong> we hold no identity-linked data — to reset your anonymous user ID, delete and reinstall the app. <strong>dequeue:</strong> you may access, export, or delete your account and all associated task data from the app's settings, or by emailing <a href="mailto:hello@sudohnim.com">hello@sudohnim.com</a>. <strong>enqueue:</strong> you may remove any device or delete your account from the app's settings, or by emailing the same address. Because we cannot read your library, we cannot export it for you; your devices already hold it in full. For data held by RevenueCat, Apple, or Google, contact those services directly.</p>
 
     <h2>9. Changes to This Policy</h2>
     <p>We may update this policy as we ship new apps or change our data practices. The "last updated" date above will always reflect the most recent version. Continued use of our apps constitutes acceptance of the updated policy.</p>

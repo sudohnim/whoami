@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete your enqueue account - Sudohnim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F4F1E8;
+      --ink: #232318;
+      --body: #44443A;
+      --muted: #6F6E5C;
+      --faint: #A29E86;
+      --olive: #5C6B2E;
+      --olive-deep: #414C1E;
+      --olive-tint: #E7E9D5;
+      --border: #E2DCC9;
+      --surface-2: #EEEADD;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body::before {
+      content: '';
+      display: block;
+      height: 6px;
+      background: linear-gradient(90deg, var(--olive-deep), var(--olive), #8A9656, var(--olive), var(--olive-deep));
+    }
+    header {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    nav a {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--olive);
+      text-decoration: none;
+      margin-left: 28px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--ink); }
+    main {
+      flex: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      width: 100%;
+    }
+    .back {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--olive);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+    .back:hover { color: var(--ink); }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--faint);
+      margin-bottom: 48px;
+      font-weight: 400;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin: 40px 0 12px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 24px 0 8px;
+    }
+    p { margin-bottom: 16px; font-size: 15px; color: var(--body); line-height: 1.75; font-weight: 300; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    li { font-size: 15px; color: var(--body); margin-bottom: 8px; line-height: 1.6; font-weight: 300; }
+    strong { font-weight: 700; color: var(--ink); }
+    a { color: var(--olive); text-decoration: none; border-bottom: 1px solid #5C6B2E44; }
+    a:hover { border-color: var(--olive); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+    .app-block {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .footnote { font-size: 12px; color: var(--faint); }
+    footer {
+      padding: 32px 40px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    footer p { font-size: 12px; color: var(--faint); margin-bottom: 10px; }
+    footer a { font-size: 12px; color: var(--olive); text-decoration: none; margin: 0 12px; border: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Sudohnim</a>
+  </header>
+
+  <main>
+    <a class="back" href="index.html">← Back</a>
+
+    <h1>Delete your enqueue account</h1>
+    <p class="meta">enqueue, by Sudohnim</p>
+
+    <p>You only have an enqueue account if you signed in for enqueue sync (with Google or Apple). enqueue works without one, and the library on your own devices is never deleted by any of the steps below.</p>
+
+    <h2>Delete it in the app</h2>
+    <ol>
+      <li>Open enqueue on your Mac.</li>
+      <li>Go to <strong>Settings</strong>, then <strong>Sync</strong>.</li>
+      <li>Open <strong>More options</strong> at the bottom, then under <strong>Your Enqueue sync account</strong> choose <strong>Delete account</strong> and confirm.</li>
+    </ol>
+    <p>Every linked device stops syncing at once. Then cancel enqueue Pro, if you have it, in the Google Play Store under <strong>Payments &amp; subscriptions</strong>, then <strong>Subscriptions</strong>: deleting the account does not cancel a store subscription.</p>
+
+    <h2>Or ask us</h2>
+    <p>Email <a href="mailto:hello@sudohnim.com?subject=Delete%20my%20enqueue%20account">hello@sudohnim.com</a> from the address you signed in with, with the subject "Delete my enqueue account". We delete it within 30 days and reply when it is done.</p>
+
+    <h2>What is deleted</h2>
+    <ul>
+      <li>Your account: email address, name, Google or Apple account identifier and profile picture address.</li>
+      <li>Your linked devices and their sync tokens.</li>
+      <li>The encrypted copy of your library on our servers.</li>
+      <li>Your plan and your monthly included-AI usage counts.</li>
+    </ul>
+
+    <h2>What is kept</h2>
+    <ul>
+      <li>The library on your own Mac and phone: it is yours, and stays.</li>
+      <li>Purchase records held by Google Play and RevenueCat, kept under their own retention rules for tax and accounting.</li>
+      <li>Server backups may hold encrypted data for up to 30 days before they are overwritten. Nobody, including us, can read it.</li>
+    </ul>
+    <p>We never keep the text you send to the included AI, so there is nothing of it to delete.</p>
+
+    <h2>Questions</h2>
+    <p>Reach us at <a href="mailto:hello@sudohnim.com">hello@sudohnim.com</a>.</p>
+
+    <hr />
+    <p class="footnote">© 2026 Sudohnim. All rights reserved.</p>
+  </main>
+
+  <footer>
+    <p>© 2026 Sudohnim. All rights reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>

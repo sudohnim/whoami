@@ -139,7 +139,7 @@
     <a class="back" href="index.html">← Back</a>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: November 2, 2026 · Sudohnim</p>
+    <p class="meta">Last updated: November 3, 2026 · Sudohnim</p>
 
     <p>Sudohnim ("we", "our", or "us") builds mobile apps. This Privacy Policy explains how we handle information across all of our products. We believe in collecting as little data as possible — only what's strictly necessary to deliver the app experience.</p>
 
@@ -166,8 +166,12 @@
     </ul>
     <p><strong>dequeue only:</strong></p>
     <ul>
-      <li><strong>Account identity</strong> — dequeue uses Google Sign-In. When you sign in, we receive and store your <strong>email address</strong> and your <strong>Google account identifier</strong>, used to create and secure your account. We never receive your Google password.</li>
+      <li><strong>Account identity</strong> — you sign in with Google or Apple. We receive and store your <strong>email address</strong> (with Apple, this may be a private relay address you choose), your <strong>Google or Apple account identifier</strong>, your <strong>display name</strong>, and, with Google only, the web address of your <strong>profile picture</strong>. We never receive your password. You can also continue without an account: we then make a random guest account that holds no email or name of yours.</li>
       <li><strong>Your content</strong> — the tasks, lists, and settings you create in dequeue are stored on our servers so they sync across your devices.</li>
+      <li><strong>Devices</strong> — a list of the devices you use dequeue on, each with a name and type (for example "Mac" or "iPhone") and when it was last seen, so you can see and remove them.</li>
+      <li><strong>Google Calendar (optional)</strong> — if you connect Google Calendar, we store the access it grants (encrypted), your Google email and the calendar you pick, so tasks with a due date appear as events in that calendar.</li>
+      <li><strong>Usage events</strong> — when you take an action such as creating, completing or deleting a task, our server records that the action happened, with a few details about it (for example whether the task has a due time or is recurring, or how many items a list has). The event is tied to your random dequeue account ID, not your email or name. It never holds the text of a task, a list or a note.</li>
+      <li><strong>Error reports</strong> — when something fails on our server, it records the kind of error, where in dequeue's code it happened, the request that caused it (its method and path), your app's user agent, and your random dequeue account ID. It never holds the text of your tasks.</li>
     </ul>
 
     <p><strong>enqueue only (if you use enqueue sync):</strong></p>
@@ -192,11 +196,12 @@
       <li>To verify and restore purchases across devices.</li>
       <li>To unlock features tied to your purchase entitlement.</li>
       <li><strong>(dequeue)</strong> To authenticate your account and sync your tasks across your devices.</li>
+      <li><strong>(dequeue)</strong> To understand which features are used and to find and fix errors, from the usage events and error reports described above.</li>
       <li><strong>(enqueue)</strong> To authenticate your account, keep your devices linked, and pass your encrypted library between them.</li>
       <li><strong>(enqueue)</strong> To run the included AI for you, to apply the models and monthly limit of your plan, and to know whether you have enqueue Pro.</li>
       <li><strong>(enqueue)</strong> To find and fix errors in the app, from the error reports described above.</li>
     </ul>
-    <p>We do not use any data for advertising, usage analytics, profiling, or any purpose beyond delivering and fixing core app functionality. We do not sell your data.</p>
+    <p>We do not use any data for advertising or profiling. Apart from the dequeue usage events above, we do not use any data for usage analytics, or for any purpose beyond delivering, improving and fixing our apps. We do not sell your data.</p>
 
     <h2>4. App-Specific Notes</h2>
 
@@ -208,8 +213,10 @@
 
     <h3>dequeue</h3>
     <ul>
-      <li><strong>Google Sign-In</strong> — dequeue authenticates with Google OAuth, requesting only basic profile and email scope. We receive your email and Google account ID; we never receive your Google password.</li>
-      <li><strong>Cloud sync</strong> — your tasks and lists are stored on our servers and transmitted over encrypted (HTTPS) connections so they stay in sync across your devices.</li>
+      <li><strong>Sign-in</strong> — dequeue signs you in with Google (basic profile and email scope only) or Sign in with Apple. We never receive your password.</li>
+      <li><strong>Cloud sync</strong> — your tasks and lists are stored on our servers and transmitted over encrypted (HTTPS) connections so they stay in sync across your devices. Each device also keeps a copy of your tasks so that it works offline.</li>
+      <li><strong>Google Calendar</strong> — only if you connect it. dequeue asks for permission to create and edit events, and writes only the events for your dated tasks. It does not read your other events. You can disconnect at any time in Settings.</li>
+      <li><strong>Reminders</strong> — task reminders are scheduled on your device. No push service receives your tasks.</li>
     </ul>
 
     <h3>enqueue</h3>
@@ -227,21 +234,21 @@
     <h2>5. Third-Party Services</h2>
     <p><strong>RevenueCat</strong> — we use RevenueCat to manage in-app purchases and entitlement status across all our apps. RevenueCat receives your anonymous user ID and purchase data. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</p>
     <p><strong>Google Sign-In</strong> (dequeue, enqueue) — used to authenticate your account. Governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
-    <p><strong>Sign in with Apple</strong> (enqueue) - used to authenticate your account. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
-    <p><strong>Railway</strong> (enqueue) - hosts enqueue sync: an app server and a database that holds accounts and linked devices. It also stores your encrypted library, which it cannot read either.</p>
+    <p><strong>Sign in with Apple</strong> (dequeue, enqueue) - used to authenticate your account. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
+    <p><strong>Railway</strong> (dequeue, enqueue) - hosts the dequeue server and its database, which hold your account, tasks and settings. It also hosts enqueue sync: an app server and a database that holds accounts and linked devices. It also stores your encrypted library, which it cannot read either.</p>
     <p><strong>AI providers</strong> (enqueue) - if you bring your own key, your device talks to the provider you choose directly, and that provider's privacy policy applies. If you use the included AI, we pass the text a feature needs to <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter</a>, which passes it to the company that runs the model you picked. Their policies apply to that text, and we route only to providers that do not store prompts or train on them.</p>
     <p><strong>RevenueCat and app stores for enqueue Pro</strong> - enqueue Pro is sold as a subscription through Google Play (the Apple App Store will follow), managed with RevenueCat. For enqueue, the user ID RevenueCat receives is your enqueue sync account ID, a random identifier and not your email, so that a purchase on your phone reaches every device on your account. RevenueCat tells our server when Pro starts, renews or ends, and we attach that to your account.</p>
-    <p><strong>PostHog</strong> (enqueue) - receives the error reports described in section 2, in the United States, with IP addresses discarded. See <a href="https://posthog.com/privacy" target="_blank">PostHog's Privacy Policy</a>.</p>
+    <p><strong>PostHog</strong> (dequeue, enqueue) - receives the dequeue usage events and error reports, and the enqueue error reports, described in section 2, in the United States, with IP addresses discarded. See <a href="https://posthog.com/privacy" target="_blank">PostHog's Privacy Policy</a>.</p>
     <p><strong>Apple App Store / Google Play</strong> — purchases are processed by Apple or Google. Their privacy policies govern how payment and transaction data are handled.</p>
 
     <h2>6. Data Retention</h2>
-    <p><strong>Stance Lab:</strong> your anonymous user ID is stored on your device and persists until you delete the app; we maintain no independent user database. <strong>dequeue:</strong> your account identity and task data are retained until you delete your account, after which they are removed from our active systems. <strong>enqueue:</strong> your account, device list, plan, monthly included-AI usage counts and encrypted library are kept until you delete your account; the text you send to the included AI is never kept. Unused linking codes expire after 30 minutes. Error reports are kept in PostHog for as long as its plan keeps events (currently up to one year), and are not linked to your account. Deleting your account ends every device at once and removes your encrypted library from our servers. The copy on your own devices stays yours. RevenueCat, Apple, and Google retain purchase records per their own data retention policies.</p>
+    <p><strong>Stance Lab:</strong> your anonymous user ID is stored on your device and persists until you delete the app; we maintain no independent user database. <strong>dequeue:</strong> your account identity and task data are retained until you delete your account, after which they are removed from our active systems. Completed tasks are deleted 7 days after you complete them, inbox tasks expire after the window you set, and deleted tasks are removed for good after 30 days. Usage events and error reports are kept in PostHog for as long as its plan keeps events (currently up to one year). <strong>enqueue:</strong> your account, device list, plan, monthly included-AI usage counts and encrypted library are kept until you delete your account; the text you send to the included AI is never kept. Unused linking codes expire after 30 minutes. Error reports are kept in PostHog for as long as its plan keeps events (currently up to one year), and are not linked to your account. Deleting your account ends every device at once and removes your encrypted library from our servers. The copy on your own devices stays yours. RevenueCat, Apple, and Google retain purchase records per their own data retention policies.</p>
 
     <h2>7. Children's Privacy</h2>
     <p>Our apps are not directed at children under 13. We do not knowingly collect any personal information from children.</p>
 
     <h2>8. Your Rights</h2>
-    <p><strong>Stance Lab:</strong> we hold no identity-linked data — to reset your anonymous user ID, delete and reinstall the app. <strong>dequeue:</strong> you may access, export, or delete your account and all associated task data from the app's settings, or by emailing <a href="mailto:hello@sudohnim.com">hello@sudohnim.com</a>. <strong>enqueue:</strong> you may remove any device or delete your account from the app's settings, or by emailing the same address. You can switch off error reports at any time in Settings, Activity. Because we cannot read your library, we cannot export it for you; your devices already hold it in full. For data held by RevenueCat, Apple, or Google, contact those services directly.</p>
+    <p><strong>Stance Lab:</strong> we hold no identity-linked data — to reset your anonymous user ID, delete and reinstall the app. <strong>dequeue:</strong> you may delete your account and all associated task data from the app's settings. To get a copy of your data, email <a href="mailto:hello@sudohnim.com">hello@sudohnim.com</a>. <strong>enqueue:</strong> you may remove any device or delete your account from the app's settings, or by emailing the same address. You can switch off error reports at any time in Settings, Activity. Because we cannot read your library, we cannot export it for you; your devices already hold it in full. For data held by RevenueCat, Apple, or Google, contact those services directly.</p>
 
     <h2>9. Changes to This Policy</h2>
     <p>We may update this policy as we ship new apps or change our data practices. The "last updated" date above will always reflect the most recent version. Continued use of our apps constitutes acceptance of the updated policy.</p>

@@ -162,6 +162,7 @@
     .app-card:nth-child(2) { animation-delay: 0.2s; }
     .app-card:nth-child(3) { animation-delay: 0.3s; }
     .app-card:nth-child(4) { animation-delay: 0.4s; }
+    .app-card:nth-child(5) { animation-delay: 0.5s; }
     .app-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(65, 76, 30, 0.12);
@@ -251,6 +252,34 @@
       transition: background 0.2s ease-out, transform 0.15s ease-out;
     }
     .store-badge:hover { background: #000; transform: scale(1.02); }
+    .store-badge.soon, .store-badge.soon:hover {
+      background: transparent;
+      color: var(--muted);
+      border: 1px dashed var(--faint);
+      transform: none;
+      cursor: default;
+    }
+
+    .app-card.deprecated { position: relative; }
+    .app-card.deprecated > :not(.gh-link) { filter: grayscale(1); opacity: 0.45; }
+    .app-card.deprecated::after {
+      content: 'Deprecated';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-6deg);
+      padding: var(--sp-2) var(--sp-4);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--surface);
+      border: 2px solid var(--muted);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+    .app-card.deprecated:hover { transform: none; box-shadow: none; border-color: var(--border); }
     .store-badge svg { flex-shrink: 0; }
     .store-text { display: flex; flex-direction: column; line-height: 1.15; }
     .store-text .small { font-size: 9px; letter-spacing: 0.02em; opacity: 0.85; }
@@ -352,6 +381,8 @@
       }
       .store-badge { background: #E9E4D3; color: #1A1D15; }
       .store-badge:hover { background: #fff; }
+      .store-badge.soon, .store-badge.soon:hover { background: transparent; color: var(--muted); }
+      .store-badge.soon .small { color: inherit; }
       .store-badge .small { color: #1A1D15; opacity: 0.7; }
       .store-badge svg path[fill="#fff"] { fill: #1A1D15; }
       .play-link { border-color: var(--olive-deep); }
@@ -426,7 +457,7 @@
         </div>
 
         <!-- lou-op -->
-        <div class="app-card">
+        <div class="app-card deprecated">
           <div class="app-head">
             <div class="app-icon"><img src="assets/lou-op-logo.png" alt="lou-op logo" width="44" height="44" loading="lazy" /></div>
             <div class="app-info">
@@ -452,6 +483,10 @@
             </div>
           </div>
           <div class="stores">
+            <a class="store-badge" href="https://apps.apple.com/us/app/dequeue-todo/id6790164846" target="_blank" rel="noopener" aria-label="Download dequeue on the App Store">
+              <svg width="16" height="16" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span class="store-text"><span class="small">Download on the</span><span class="big">App Store</span></span>
+            </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sudohnim.dequeue&hl=en_US" target="_blank" rel="noopener" aria-label="Get dequeue on Google Play">
               <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#00E0FF" d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.2z"/>
@@ -461,6 +496,10 @@
               </svg>
               <span class="store-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
             </a>
+            <span class="store-badge soon" aria-label="macOS app coming soon">
+              <svg width="16" height="16" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span class="store-text"><span class="small">Coming soon</span><span class="big">macOS</span></span>
+            </span>
           </div>
         </div>
 
@@ -488,6 +527,10 @@
               </svg>
               <span class="store-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
             </a>
+            <span class="store-badge soon" aria-label="macOS app coming soon">
+              <svg width="16" height="16" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span class="store-text"><span class="small">Coming soon</span><span class="big">macOS</span></span>
+            </span>
           </div>
         </div>
 
